@@ -7,7 +7,7 @@ import GamePlayPage from './pages/GamePlayPage';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-cozy-cream font-cozy">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/setup/:gameId" element={<GameSetupPage />} />

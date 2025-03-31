@@ -1,10 +1,15 @@
 ---
-description:
-globs:
+description: 
+globs: 
 alwaysApply: true
 ---
 
-# Your rule content
+# ALWAYS ONLY use port 3000. if port 3000 is busy, but it becomes necessary to start a new development server. Kill port 3000, and start the new dev server on 3000.
+# When starting the dev server ALWAYS use --host
 
-- You can @ files here
-- You can use markdown but dont have to
+# always follow the following files:
+[DESIGN.md](mdc:DESIGN.md)
+[EXPLANATION.md](mdc:EXPLANATION.md)
+[IMPLEMENT.md](mdc:IMPLEMENT.md)
+
+# NEVER fully overwrite any of the previously mentioned files. and make sure to NEVER overwrite the [CURRENT.md](mdc:CURRENT.md) file. When asked, ONLY append to the end of the [CURRENT.md](mdc:CURRENT.md) file with what you've accomplished. Any time you do append to the [CURRENT.md](mdc:CURRENT.md) file, you should be extremely clear with what you've done, the location that you did it. if there were files added, you should exlpain what those files do. Explain it in such a way that when you go back and read it you can be fully up to date with what has happened.

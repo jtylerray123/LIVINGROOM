@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,10 +7,16 @@
 /* Custom styles */
 html {
   @apply antialiased;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
-  @apply bg-gray-100 text-gray-900;
+  @apply bg-cozy-cream text-cozy-brown;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Mobile-first styles */
@@ -16,11 +24,40 @@ body {
   html {
     @apply text-sm;
   }
+  
+  body {
+    @apply overflow-x-hidden;
+  }
 }
 
 /* Portrait mode enforcement */
 @media (orientation: landscape) and (max-width: 640px) {
   body {
     @apply rotate-90 origin-left;
+  }
+}
+
+/* Cozy custom components */
+@layer components {
+  .cozy-input {
+    @apply w-full px-4 py-2 bg-cozy-latte border-2 border-cozy-warm rounded-lg 
+           focus:outline-none focus:border-cozy-amber focus:ring-2 focus:ring-cozy-warm
+           placeholder-cozy-brown/50 transition-colors duration-200
+           text-center;
+  }
+  
+  .cozy-button {
+    @apply px-6 py-2 bg-cozy-amber text-white rounded-lg
+           hover:bg-cozy-rust transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-cozy-warm
+           active:transform active:scale-95
+           text-center;
+  }
+  
+  .cozy-card {
+    @apply bg-cozy-latte rounded-lg shadow-cozy p-6
+           border-2 border-cozy-warm
+           hover:border-cozy-amber transition-colors duration-200
+           text-center;
   }
 } 
