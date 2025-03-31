@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { motion } from 'framer-motion';
+import GameCard from '../components/GameCard';
+import { games } from '../games/gamesData';
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -70,25 +72,16 @@ const HomePage: React.FC = () => {
           transition={{ delay: 0.4 }}
           className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {/* Placeholder Game Cards */}
-          {[1, 2, 3].map((i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.02 }}
-              className="cozy-card cursor-pointer"
-            >
-              <div className="h-32 bg-cozy-amber rounded-lg mb-4"></div>
-              <h3 className="text-lg font-semibold text-cozy-brown mb-2">Game Title</h3>
-              <p className="text-cozy-rust text-sm mb-4">2-8 players • 15-30 min</p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                <span className="px-2 py-1 bg-cozy-warm text-cozy-brown rounded-full text-xs">
-                  Party
-                </span>
-                <span className="px-2 py-1 bg-cozy-warm text-cozy-brown rounded-full text-xs">
-                  Easy
-                </span>
-              </div>
-            </motion.div>
+          {games.map((game) => (
+            <GameCard
+              key={game.id}
+              title={game.title}
+              thumbnail={game.thumbnail}
+              playerCount={game.playerCount}
+              duration={game.duration}
+              difficulty={game.difficulty}
+              tags={game.tags}
+            />
           ))}
         </motion.div>
       </main>
